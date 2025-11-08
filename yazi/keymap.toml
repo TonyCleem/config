@@ -1,0 +1,10 @@
+[[mgr.prepend_keymap]]
+on = ["T"]
+run = "plugin tar"
+desc = "Extract tar here"
+
+
+[[mgr.prepend_keymap]]
+on = ["o"]
+run = "shell --detach feh \"$@\""
+desc = "Open image with feh"
