@@ -1,0 +1,136 @@
+configuration {
+  sort:			true;
+  sorting-method:	"normal";
+  disable-history:	false;
+  scroll-method:	0;
+  window-thumbnail:	true;
+}
+
+// @theme "/home/tc/.config/rofi/tokyonight_color.rasi"
+@import "~/.config/rofi/config.rasi"
+
+
+mainbox { children: [ inputbar, listview ]; }
+
+window {
+  transparency:		"real";
+  width:		500px;
+  border:		3px solid;
+  border-radius:	6px;
+  height:		400px;
+  border-color: @selected-normal-background;
+}
+
+inputbar {
+  children:		[ prompt ];
+  expand:		false;
+  padding:		10px 10px 10px 10px;
+  border:		3px solid;
+
+}
+
+prompt {
+  border:		3px solid; 
+  enabled: true; 
+  background-color:	@background;
+  padding:		10px;
+  border-radius:	6px;
+}
+
+listview {
+  columns:		2;
+  cycle:		true;
+  dynamic:		true;
+  layout:		vertical;
+  scrollbar:		false;
+  border:		3px solid;
+}
+
+// element {
+element {
+    enabled:                     true; 
+    spacing:                     5px;
+    margin:		3px 5px 3px 5px;
+    padding:                     5px 10px;
+    background-color:            @normal-background;
+    text-color:                  @normal-foreground;
+    cursor:                      pointer;
+    border-radius:               6px;
+    
+}
+
+element normal.normal {
+    background-color:            @normal-background;
+    text-color:                  @normal-foreground;
+    border-radius:               6px;
+}
+
+element selected.normal {
+    background-color:            @selected-normal-background;
+    text-color:                  @selected-normal-foreground;
+    border-radius:               6px;
+}
+
+element normal.active {
+    background-color:            @active-background;
+    text-color:                  @active-foreground;
+}
+
+element selected.active {
+    background-color:            @active-background;
+    text-color:                  @selected-normal-foreground;
+    border-radius:               6px;
+}
+
+element normal.urgent {
+    background-color:            @urgent-background;
+    text-color:                  @urgent-foreground;
+}
+
+element selected.urgent {
+    background-color:            @urgent-background;
+    text-color:                  @selected-normal-foreground;
+    border-radius:               6px;
+}
+
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        24px;
+    cursor:                      inherit;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+error-message {
+    background-color: @background-color;
+    text-color:       @foreground;
+}
+
+//   border:		3px solid;
+//   orientation:		vertical;
+//   margin:		3px 5px 3px 5px;
+//   border-radius:	6px;
+//   background-color:            @normal-background;
+//   text-color:                  @normal-foreground;
+// }
+//
+// element-text {
+//   border:		3px solid;
+//   expand:		true;
+//   margin:		10px 15px 10px 15px;
+//   background-color:	inherit;
+//   text-color:		inherit;
+// }
+//
+// element selected.normal {
+//   border: 3px solid;
+//   background-color:            @selected-normal-background;
+//   text-color:                  @selected-normal-foreground;
+//   border-radius: 6px;
+// }

@@ -1,0 +1,201 @@
+
+// @import "/home/tc/.config/rofi/tokyonight_color.rasi"
+//
+// * {
+//     border-color:              @hv;
+//     background-color:          @bg;
+//     foreground:          @fg;
+//     normal-background:          @bg;
+//     normal-foreground:          @fg;
+//     selected-normal-background:        @hv;
+//     selected-normal-foreground:        @black;
+//     active-background:          @kl;
+//     active-foreground:          @bg;
+//     urgent-background:          @urg;
+//     urgent-foreground:          @bg;
+// }
+
+@import "~/.config/rofi/config.rasi"
+
+
+// defines different aspects of the window
+window {
+    orientation: horizontal;
+    transparency: "screenshot";
+    border-color: @selected-normal-background;   
+    border: 3px;
+    border-radius: 6px;
+    spacing: 0;
+    children: [ mainbox ];
+    background-color: @background-color;
+    height: 300px;
+    width: 400px;
+    scrollbar: true;
+}
+
+mainbox {
+    spacing: 0;
+    children: [ inputbar, message, listview, mode-switcher ];
+}
+
+inputbar {
+    color: @active-background;
+    padding: 11px;
+    border: 0 0 2px 0;
+    border-color: @border-color;
+}
+
+message {
+    padding: 0;
+}
+
+textbox {
+    color: @active-background;
+    padding: 10px;
+}
+
+entry, prompt, case-indicator {
+    text-font: inherit;
+    text-color: inherit;
+}
+
+entry {
+    cursor: pointer;
+}
+
+prompt {
+    margin: 0px 5px 0px 0px;
+}
+
+listview {
+    layout: vertical;
+    padding: 0;
+    lines: 12;
+    columns: 1;
+    dynamic: false;
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     5px;
+    margin:                      0px;
+    padding:                     5px 5px;
+    background-color:            @normal-background;
+    text-color:                  @normal-foreground;
+    cursor:                      pointer;
+    border-radius:               0px;
+}
+
+element normal.normal {
+    background-color:            @normal-background;
+    text-color:                  @normal-foreground;
+    border-radius:               6px;
+}
+
+element selected.normal {
+    background-color:            @selected-normal-background;
+    text-color:                  @selected-normal-foreground;
+    border-radius:               5px;
+}
+
+element normal.active {
+    background-color:            @active-background;
+    text-color:                  @active-foreground;
+}
+
+element selected.active {
+    background-color:            @active-background;
+    text-color:                  @selected-normal-foreground;
+    border-radius:               0px;
+}
+
+element normal.urgent {
+    background-color:            @urgent-background;
+    text-color:                  @urgent-foreground;
+}
+
+element selected.urgent {
+    background-color:            @urgent-background;
+    text-color:                  @selected-normal-foreground;
+    border-radius:               6px;
+}
+
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        24px;
+    cursor:                      inherit;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+error-message {
+    background-color: @background-color;
+    text-color:       @foreground;
+}
+
+
+/*****----- Mode Switcher -----*****/
+
+mode-switcher {
+    spacing: 10px;
+    margin: 0px 10px;   
+    padding: 15px;
+}
+
+button {
+    padding: 5px;
+    color: @border-color;
+    horizontal-align: 0.5;
+    border: 2px;
+    border-radius: 4px;
+    border-color: @border-color;
+}
+
+button selected normal {
+    border: 2px 0px 2px 2px;
+    border-color: @border-color;
+}
+
+/*****----- Message & Textbox -----*****/
+
+button selected {
+    background-color:            @selected-normal-background;
+    text-color:                  @selected-normal-foreground;
+}
+
+textbox {
+    background-color: @background-color;
+    text-color:       @foreground;
+    border:           0px solid;
+    border-radius:    0px;
+    padding:          0px;
+    vertical-align:   0.0;
+    horizontal-align: 0.0;
+    highlight:        none;
+    placeholder-color: @foreground;
+    blink:            true;
+    markup:           true;
+}
+
+message {
+    background-color: @background-color;
+    text-color:       @foreground;
+    border-radius:               6px;
+}
+
+error-message {
+    padding:                     10px;
+    background-color:            @background-color;
+    text-color:                  @foreground;
+}
+
+scrollbar {
+    enabled: false;
+}

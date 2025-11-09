@@ -1,0 +1,15 @@
+* {
+  bg:   #1A1B26;
+  fg:		#C0CAF5;
+  bgAlt: #16161E;
+  button:		#BB9AF7;
+  fg:        #c0caf5;
+  hv:        #bb9af7;
+  kl:        #7dcfff;
+  urg:       #F7768E;
+  black:     #000000;
+  background-color:	@bg;
+  text-color:		@fg;
+
+  font: "CaskaydiaMono Nerd Font Propo 12";
+}

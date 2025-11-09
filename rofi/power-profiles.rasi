@@ -1,0 +1,146 @@
+@import "~/.config/rofi/config.rasi"
+
+@import "/home/tc/.config/rofi/tokyonight_color.rasi"
+
+* {
+  background:                   @bg;
+  foreground:                   @fg;
+  normal-background:            @bg;
+  normal-foreground:            @fg;
+  selected-normal-background:   @button;
+  selected-normal-foreground:   @black;
+  active-background:            @kl;
+  active-foreground:            @bg;
+  urgent-background:            @urg;
+  urgent-foreground:            @bg;
+}
+
+window {
+    /* properties for window widget */
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       400px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      2px solid;
+    border-radius:               5px;
+    border-color:                @selected-normal-background;
+    cursor:                      "default";
+    background-color:            @background;
+}
+
+
+mainbox {
+    enabled:                     true;
+    spacing:                     15px;
+    margin:                      0px;
+    padding:                     30px;
+    border-radius:               0px;
+    border-color:                transparent;
+    background-color:            transparent;
+    children: [ inputbar, message, listview, mode-switcher ];
+}
+
+inputbar {
+    color: @active-background;
+    padding: 11px;
+    border: 0 0 2px 0;
+}
+
+message {
+    padding: 0;
+}
+
+textbox {
+    color: @active-background;
+    padding: 10px;
+}
+
+entry, prompt, case-indicator {
+    text-font: inherit;
+    text-color: inherit;
+}
+
+entry {
+    cursor: pointer;
+}
+
+prompt {
+    margin: 0px 5px 0px 0px;
+}
+
+listview {
+    layout: vertical;
+    padding: 0;
+    lines: 12;
+    columns: 1;
+    dynamic: false;
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true; 
+    spacing:                     5px;
+    margin:                      0px;
+    padding:                     10px 10px;
+    background-color:            @normal-background;
+    text-color:                  @normal-foreground;
+    cursor:                      pointer;
+    border-radius:               6px;
+    
+}
+
+element normal.normal {
+    background-color:            @normal-background;
+    text-color:                  @normal-foreground;
+    border-radius:               6px;
+}
+
+element selected.normal {
+    background-color:            @selected-normal-background;
+    text-color:                  @selected-normal-foreground;
+    border-radius:               6px;
+}
+
+element normal.active {
+    background-color:            @active-background;
+    text-color:                  @active-foreground;
+}
+
+element selected.active {
+    background-color:            @active-background;
+    text-color:                  @selected-normal-foreground;
+    border-radius:               6px;
+}
+
+element normal.urgent {
+    background-color:            @urgent-background;
+    text-color:                  @urgent-foreground;
+}
+
+element selected.urgent {
+    background-color:            @urgent-background;
+    text-color:                  @selected-normal-foreground;
+    border-radius:               6px;
+}
+
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        24px;
+    cursor:                      inherit;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+

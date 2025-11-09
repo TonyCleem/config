@@ -1,0 +1,18 @@
+@import "~/.cache/wal/colors-rofi-dark"
+configuration {
+      font: "CaskaydiaMono Nerd Font Propo 12";
+      scrollbar: false;
+}
+
+* {
+    text-wrap: true;
+    text-overflow: "wrap";
+}
+
+//@theme "/usr/share/rofi/themes/pywal.rasi"
+
+//@theme "/usr/share/rofi/themes/tokyonight.rasi"
+
+//@theme "/usr/share/rofi/themes/pywal.rasi"
+
+@theme "/usr/share/rofi/themes/tokyonight.rasi"
