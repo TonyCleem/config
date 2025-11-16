@@ -1,0 +1,85 @@
+@import 'themes/tokyonight.css';
+
+* {
+    background-image: none;
+    transition: 20ms;
+    box-shadow: none;
+}
+
+window {
+    background-color: rgba(0, 0, 0, 0);
+ }
+
+ 
+button {
+    color: @fg;
+    background-color: @bg;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20%;
+    border: none;
+    border-radius: 10px;
+    outline-style: none;
+    /* border-style: solid; */
+    /* border-width: 1px; */
+    /* border-color: @blue; */
+    box-shadow: 1 1 5px rgba(0,0,0,0.5);
+}
+
+/* options */
+#lock {
+    opacity: 0.8;
+    background-color: @bg;
+    background-image: image(url("/home/tc/.config/wlogout/icons/lock.png"));
+    border-radius: 5px 0px 0px 0px;
+    margin : 100px 0px 0px 550px;
+}
+
+#reboot {
+    opacity: 0.8;
+    background-color: @bg;
+    background-image: image(url("/home/tc/.config/wlogout/icons/reboot.png"));
+    border-radius: 0px 0px 0px 5px;
+    margin : 0px 0px 100px 550px;
+}
+
+#logout {
+    opacity: 0.8;
+    background-color: @bg;
+    background-image: image(url("/home/tc/.config/wlogout/icons/logout.png"));
+    border-radius: 0px 5px 0px 0px;
+    margin : 100px 550px 0px 0px;
+}
+
+#shutdown {
+    opacity: 0.8;
+    background-color: @red;
+    background-image: image(url("/home/tc/.config/wlogout/icons/shutdown.png"));
+    border-radius: 0px 0px 5px 0px;
+    margin : 0px 550px 100px 0px;
+}
+
+/* options on hover */
+button:hover {
+    background-size: 25%;
+}
+
+button:hover#lock {
+    border-radius: 10px 10px 0px 10px;
+    margin : 80px 0px 0px 530px;
+}
+
+button:hover#reboot {
+    border-radius: 10px 0px 10px 10px;
+    margin : 0px 0px 80px 530px;
+}
+
+button:hover#logout {
+    border-radius: 10px 10px 10px 0px;
+    margin : 80px 530px 0px 0px;
+}
+
+button:hover#shutdown {
+    border-radius: 0px 10px 10px 10px;
+    margin: 0px 530px 80px 0px;
+}

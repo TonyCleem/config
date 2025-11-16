@@ -1,0 +1,8 @@
+2025/11/12-20:41:42.794 5 Creating DB /home/tc/.config/chromium/Default/Local Storage/leveldb since it was missing.
+2025/11/12-20:41:42.804 5 Reusing MANIFEST /home/tc/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
+2025/11/12-20:42:42.806 7 Level-0 table #5: started
+2025/11/12-20:42:42.845 7 Level-0 table #5: 54379 bytes OK
+2025/11/12-20:42:42.847 7 Delete type=0 #3
+2025/11/12-20:46:47.365 7 Level-0 table #7: started
+2025/11/12-20:46:47.404 7 Level-0 table #7: 67355 bytes OK
+2025/11/12-20:46:47.406 7 Delete type=0 #4

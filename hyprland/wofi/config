@@ -1,0 +1,26 @@
+[config]
+allow_images=true
+width=600
+show=drun
+line_wrap=word
+prompt=Search
+height=400
+term=kitty
+ellipsize=end
+hide_scroll=true
+print_command=true
+insensitive=true
+columns=1
+no_actions=true
+
+# keybinds (vim-ish)
+key_up=Ctrl-k
+key_down=Ctrl-j
+key_left=Ctrl-h
+key_right=Ctrl-l
+key_submit=Return
+key_forward=Tab
+key_backward=Shift-ISO_Left_Tab
+
+# stylesheet
+style=/home/tc/.config/wofi/themes/tokyonight.css

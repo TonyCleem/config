@@ -1,0 +1,213 @@
+{
+        "layer": "top",
+        "position": "top",
+        "reload_style_on_change": true,
+        "modules-left": ["clock","custom/weather","tray"],
+        "modules-center": ["hyprland/workspaces"],
+        "modules-right": ["group/expand","hyprland/language", "bluetooth","network","group/audio", "battery"],
+
+        "hyprland/workspaces": {
+            "format": "{icon}",
+            "format-icons": {
+                "active": "",
+                "default": "",
+                "empty": ""
+            },
+            "persistent-workspaces": {
+                "*": [ 1,2,3,4,5 ]
+            }
+        },
+        "custom/notification": {
+            "tooltip": false,
+            "format": "",
+            "on-click": "swaync-client -t -sw",
+            "escape": true
+        },
+        "clock": {
+          "format": "{:%d.%m %A %H:%M} ",
+            "interval": 1,   
+            "tooltip-format": "<tt>{calendar}</tt>",
+            "calendar": {
+                "format": {
+                    "today": "<span color='#fAfBfC'><b>{}</b></span>"
+                }
+            },
+            "actions": {
+                "on-click-right": "shift_down",
+                "on-click": "shift_up"
+            }
+        },
+        "network": {
+            "format-wifi": "",
+            "format-ethernet":"",
+            "format-disconnected": "",
+            "tooltip-format-disconnected": "Error",
+            "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+            "tooltip-format-ethernet": "{ifname} {ipaddr}",
+            "on-click": "wifi-menu"
+        },
+
+        "bluetooth": {
+            "format-on": "󰂯",
+            "format-off": "BT-off",
+            "format-disabled": "󰂲",
+            "format-connected-battery": "",
+            "format-alt": "{device_battery_percentage}% ",
+            "on-click": "toggle", 
+            "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+            "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+            "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+            "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
+            "on-click-right": "blueman-manager",
+        }, 
+
+        "battery": {
+            "interval":30,
+            "states": {
+                "good": 95,
+                "warning": 30,
+                "critical": 20
+            },
+            "format": "{icon}",
+            "format-alt": "{capacity}% {icon}",
+            "format-charging": "{capacity}% {icon}",
+            "format-plugged": "{capacity}% 󰂄 ",
+            "format-icons": {
+              "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+              "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+            },
+            "on-click": "toggle",                
+            "tooltip": true,                     
+            "tooltip-format": "Осталось: {time}" 
+        },
+
+        "custom/expand": {
+            "format": "",
+            "tooltip": false
+        },
+        "custom/endpoint":{
+            "format": "|",
+            "tooltip": false
+        },
+        "group/expand": {
+            "orientation": "horizontal",
+            "drawer": {
+                "transition-duration": 600,
+                "transition-to-left": true,
+                "click-to-reveal": true
+            },
+            "modules": ["custom/expand", "cpu","memory","temperature","custom/endpoint"],
+        },
+        "custom/colorpicker": {
+            "format": "{}",
+            "return-type": "json",
+            "interval": "once",
+            "exec": "~/.config/waybar/scripts/colorpicker.sh -j",
+            "on-click": "~/.config/waybar/scripts/colorpicker.sh",
+            "signal": 1
+        },
+
+        "cpu": {
+            "interval": 2,              
+            "format": "󰻠",
+            "format-alt": "󰻠 {usage}%", 
+            "tooltip": true,            
+            "on-click": "toggle"        
+        },
+
+        "memory": {
+            "interval": 2,              
+            "format": "",
+            "format-alt": " {percentage}%", 
+            "tooltip": true,            
+            "on-click": "toggle"        
+        },
+
+        "temperature": {
+            "critical-threshold": 80,
+            "format": "",
+        },
+        "tray": {
+            "icon-size": 14,
+            "spacing": 10
+        },
+
+        "hyprland/language": {
+          "format": "{}",
+          "format-en": "EN",
+          "format-ru": "RU",
+        },
+
+        "group/audio": {
+            "orientation": "horizontal",
+            "modules": [
+              "pulseaudio",
+              "pulseaudio#microphone",
+              ]	
+        },
+        
+        "backlight": {
+            "interval": 2,
+            "align": 0,
+            "rotate": 0,
+            //"format": "{icon} {percent}%",
+            "format-icons": [" ", " ", " ", "󰃝 ", "󰃞 ", "󰃟 ", "󰃠 "],
+            "format": "{icon}",
+            //"format-icons": ["","","","","","","","","","","","","","",""],
+            "tooltip-format": "backlight {percent}%",
+            "icon-size": 10,
+            "on-click": "",
+            "on-click-middle": "",
+            "on-click-right": "",
+            "on-update": "",
+            "on-scroll-up": "~/.config/hypr/scripts/Brightness.sh --inc",
+            "on-scroll-down": "~/.config/hypr/scripts/Brightness.sh --dec",
+            "smooth-scrolling-threshold": 1,
+        },
+
+        "pulseaudio": {
+            "format": "{icon}",
+            "format-alt": "{volume}% {icon}",
+            "format-bluetooth": "{icon} 󰂰",
+            "format-muted": "󰖁",
+            "format-icons": {
+                "headphone": "",
+                "hands-free": "",
+                "headset": "",
+                "phone": "",
+                "portable": "",
+                "car": "",
+            "default": ["", "", ""], 
+            "ignored-sinks": ["Easy Effects Sink"],
+            },
+            "scroll-step": 5.0,
+            "on-click-right": "pavucontrol -t 3",
+            "on-click": "toggle",
+            "on-scroll-up": "volume_brightness2.sh volume_up",
+            "on-scroll-down": "volume_brightness2.sh volume_down",
+            "tooltip-format": "{icon} {desc} | {volume}%",
+            "smooth-scrolling-threshold": 1,
+        },
+      
+        "pulseaudio#microphone": {
+            "format": "",
+            "format-alt": "{format_source}",
+            "format-source": "{volume}% ",
+            "format-source-muted": "",
+            "on-click-right": "pavucontrol -t 4",
+            "on-click": "toggle",
+            "scroll-step": 5.0,
+            "on-scroll-up": "volume_brightness2.sh volume_up",
+            "on-scroll-down": "volume_brightness2.sh volume_down",
+            "tooltip-format": "{source_desc} | {source_volume}%",
+            "smooth-scrolling-threshold": 1,
+        },
+  
+        "custom/weather": {
+        "format": "{}",
+        "interval": 10,
+        "exec": "weather",
+        "tooltip": false
+        },
+
+} 

@@ -1,0 +1,123 @@
+@import url("/home/tc/.config/waybar/themes/tokyonight.css");
+
+* {
+    font-size: 15px;
+    font-family: "CaskaydiaMono Nerd Font Propo";
+    font-weight: bold;
+}
+
+window#waybar {
+    all: unset;
+}
+
+.modules-left, .modules-center, .modules-right {
+    padding: 7px;
+    margin: 10 10 5 10;
+    border-radius: 10px;
+    background: alpha(@background, .6);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+}
+
+tooltip {
+    background: @background;
+    color: @accent;
+}
+
+/* --- hover --- */
+#clock:hover,
+#custom-weather:hover,
+#custom-pacman:hover,
+#custom-notification:hover,
+#bluetooth:hover,
+#network:hover,
+#battery:hover,
+#cpu:hover,
+#language:hover,
+#pulseaudio:hover,
+#pulseaudio#microphone:hover,
+#memory:hover,
+#temperature:hover {
+    transition: all .3s ease;
+    color: @accent;
+}
+
+/* #custom-endpoint { */
+/*     color: @accent; */
+/* } */
+
+/* --- модули --- */
+#custom-notification,
+#clock,
+#custom-weather,
+#custom-pacman,
+#bluetooth,
+#network,
+#battery,
+#cpu,
+#tray,
+#language,
+#pulseaudio,
+#pulseaudio#microphone,
+#memory,
+#temperature {
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color: @foreground;
+}
+
+/* --- workspace --- */
+#workspaces {
+    padding: 0px 5px;
+}
+#workspaces button {
+    all: unset;
+    padding: 0px 5px;
+    color: alpha(@accent, .4);
+    transition: all .2s ease;
+}
+#workspaces button:hover {
+    color: rgba(0,0,0,0);
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+}
+#workspaces button.active {
+    color: @accent;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+#workspaces button.empty {
+    color: rgba(0,0,0,0);
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
+}
+#workspaces button.empty:hover {
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+}
+#workspaces button.empty.active {
+    color: @accent;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+
+/* --- батарея --- */
+#battery.charging {
+    color: @accent;
+}
+#battery.warning:not(.charging) {
+    color: @warning;
+}
+#battery.critical:not(.charging) {
+    color: @critical;
+    animation: blink 0.5s linear infinite alternate;
+}
+
+/* --- другие кастомные --- */
+#group-expand, #custom-expand, #custom-colorpicker {
+    padding: 0px 5px;
+    transition: all .3s ease;
+}
+
+#custom-expand, #custom-endpoint {
+    color: alpha(@foreground, .4);
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+#custom-expand:hover {
+    color: rgba(255,255,255,.2);
+    text-shadow: 0px 0px 2px rgba(255,255,255,.5);
+}

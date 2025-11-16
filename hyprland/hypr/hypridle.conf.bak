@@ -1,0 +1,53 @@
+general {
+    lock_cmd = pidof hyprlock || hyprlock
+    before_sleep_cmd = hyprlock
+    after_sleep_cmd = hyprctl dispatch dpms on 
+}
+
+listener {
+    timeout = 10
+    on-timeout = pgrep hyprlock && hyprctl dispatch dpms off
+    on-resume = hyprctl dispatch dpms on
+}
+
+listener {
+  timeout = 270
+  on-timeout = brightnessctl set 25%-     
+  on-resume = brightnessctl set 25%+ 
+}
+
+listener {
+  timeout = 270
+  on-timeout = notify-send "system" "Переход в спящий режим"      
+}
+
+listener {
+    timeout = 300   
+    on-timeout = hyprlock
+}
+
+listener {
+    timeout = 600   
+    on-timeout = hyprlock
+}
+
+
+listener {
+    timeout = 900                           # 15min
+    on-timeout = hyprctl dispatch dpms off  # command to run when timeout has passed
+    on-resume = hyprctl dispatch dpms on    # command to run when activity is detected after timeout has fired.
+}
+
+
+
+listener {
+    timeout = 1200                           # 15 минут
+    on-timeout = systemctl suspend  
+}
+
+
+listener {
+    timeout = 3600 # 1 hour (in seconds)
+    on-timeout = systemctl hibernate
+    on-resume = notify-send "Welcome back!"
+}

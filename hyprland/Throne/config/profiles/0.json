@@ -1,0 +1,49 @@
+{
+    "bean": {
+        "_v": 0,
+        "addr": "195.133.75.198",
+        "brutal_speed": 0,
+        "c_cfg": "",
+        "c_out": "",
+        "enable_brutal": false,
+        "flow": "xtls-rprx-vision",
+        "mux": 0,
+        "name": "TC-tc_main",
+        "pass": "bfd36258-5bd7-4a22-bffc-1b88116c12a5",
+        "port": 443,
+        "stream": {
+            "alpn": "",
+            "cert": "",
+            "ed_len": 0,
+            "ed_name": "",
+            "h_type": "",
+            "headers": "",
+            "host": "",
+            "insecure": false,
+            "method": "",
+            "net": "tcp",
+            "pac_enc": "xudp",
+            "path": "",
+            "pbk": "a8blWwn5dx_4wGf4Nt8SHUzr-kKiKioow8zSH5g-zkc",
+            "sec": "tls",
+            "sid": "2adc0f4175fd7e",
+            "sni": "www.cloudflare.com",
+            "tls_frag": false,
+            "tls_frag_fall_delay": "",
+            "tls_record_frag": false,
+            "utls": "chrome"
+        }
+    },
+    "country": "",
+    "dl": "",
+    "gid": 0,
+    "id": 0,
+    "report": "",
+    "traffic": {
+        "dl": 2116285954,
+        "ul": 93513707
+    },
+    "type": "vless",
+    "ul": "",
+    "yc": 0
+}
